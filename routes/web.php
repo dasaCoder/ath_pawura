@@ -17,9 +17,13 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/profile','AddController@getUsersOnes');
+
+Route::get('/home', 'AddController@getAll')->name('home');
 
 Route::post('/advertisment/add', 'AddController@add')->name('advertisement');
 Route::get('/advertisment/add',function(){
     return view('create_add');
 });
+Route::get('advertisement/{id}','AddController@getById');
+

@@ -55,6 +55,10 @@
 
                     <ul class="dropdown-menu">
                         <li class="dropdown-item">
+                            <a href="{{'profile'}}">Profile</a>
+                        </li>
+
+                        <li class="dropdown-item">
                             <a  href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -65,6 +69,7 @@
                                 {{ csrf_field() }}
                             </form>
                         </li>
+
                     </ul>
                 </li>
             @endguest

@@ -10,7 +10,11 @@
 
         <div>
 
-            home page
+            @foreach($adds as $add)
+
+                {{$add->title}}
+
+            @endforeach
 
         </div>
 
