@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/advertisment/add', 'AddController@add')->name('advertisement');
+Route::get('/advertisment/add',function(){
+    return view('create_add');
+});

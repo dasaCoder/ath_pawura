@@ -1,23 +1,21 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Dashboard</div>
 
-                <div class="panel-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    You are logged in!
-                </div>
-            </div>
+    <div class="col-lg-2 col-md-2 "><img src="http://via.placeholder.com/250x750" alt="left" class="img-fluid"></div>
+    <div class="col-lg-8 col-md-8 ">
+        <div class="text-center">
+            <img src="http://via.placeholder.com/750x150" alt="left" class="img-fluid">
         </div>
+
+        <div>
+
+            home page
+
+        </div>
+
     </div>
-</div>
+    <div class="col-lg-2 col-md-2 "><img src="http://via.placeholder.com/250x750" alt="right" class="img-fluid"></div>
+
+
 @endsection
