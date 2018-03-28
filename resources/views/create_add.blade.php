@@ -5,7 +5,7 @@
     <div class="container-fluid">
 
         <div class="panel-body">
-            <form class="form-horizontal" method="POST" action="{{ route('advertisement') }}">
+            <form class="form-horizontal" method="POST" action="{{ route('advertisement') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
 
                 <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
@@ -63,6 +63,40 @@
                         @if ($errors->has('description'))
                             <span class="help-block">
                                         <strong>{{ $errors->first('description') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('image1') ? ' has-error' : '' }}">
+                    <label for="image1" class="col-md-4 control-label">image1</label>
+
+                    <div class="col-md-6">
+
+                        <input name="image1" id="image1" type="file" value="{{ old('image1') }}" required>
+
+                        {{--<input id="description" type="text" class="form-control" name="description" value="{{ old('description') }}" required autofocus>--}}
+
+                        @if ($errors->has('image1'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('image1') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('image2') ? ' has-error' : '' }}">
+                    <label for="image2" class="col-md-4 control-label">image2</label>
+
+                    <div class="col-md-6">
+
+                        <input name="image2" id="image2" type="file" value="{{ old('image2') }}" required>
+
+                        {{--<input id="description" type="text" class="form-control" name="description" value="{{ old('description') }}" required autofocus>--}}
+
+                        @if ($errors->has('image2'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('image2') }}</strong>
                                     </span>
                         @endif
                     </div>

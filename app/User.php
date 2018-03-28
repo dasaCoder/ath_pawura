@@ -29,6 +29,6 @@ class User extends Authenticatable
     ];
 
     public function advertisements(){
-        return $this->hasMany('App/Advertisement');
+        return $this->hasMany('App\Advertisement');
     }
 }

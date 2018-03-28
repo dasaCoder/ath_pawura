@@ -11,7 +11,9 @@
         <div>
 
             @foreach($adds as $add)
-
+                <div class="row">
+                    <img src="{{route('advertisement.image','add_'.$add->id.'_image_1.jpg')}}" alt="">
+                </div>
                 {{$add->title}}
 
             @endforeach

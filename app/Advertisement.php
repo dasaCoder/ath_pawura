@@ -13,4 +13,8 @@ class Advertisement extends Model
     public function user(){
         return $this->belongsTo('user','user_id');
     }
+
+    public function images(){
+        return $this->hasMany('App\Image');
+    }
 }

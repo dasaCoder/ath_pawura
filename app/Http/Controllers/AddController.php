@@ -3,14 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Advertisement;
+use App\Image;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth;
+use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Storage;
+use phpDocumentor\Reflection\Types\Integer;
 
 
 class AddController extends Controller
 {
-    public function validator(array $data){
+    /*public function validator(array $data){
         return Validator::make($data, [
            'title' => 'required',
            'price' => 'required|number',
@@ -26,16 +30,35 @@ class AddController extends Controller
             'description' => $data['description'],
             'type' => $data['type']
         ]);
-    }
+    }*/
 
     public function add(Request $request){
         $addver = new Advertisement();
         $addver->title = $request->title;
-        $addver->price = $request->price;
+        $addver->price = (double)$request->price;
         $addver->description = $request->description;
         $addver->type = $request->type;
         $addver->user_id = auth()->user()->id;
         $addver->save();
+
+        // echo ($request->image1);
+
+
+        for($x = 0; $x < 2; $x++){
+            $filename = 'add_'.$addver->id. '_image_'.($x+1).'.jpg';
+            $key = 'image'.($x+1);
+
+            $image1 = $request->file($key);
+            Storage::disk('local')->put($filename,File::get($image1));
+
+            $image = new Image();
+            $image->image_path = $filename;
+            $image->advertisement_id = $addver->id;
+            $image->save();
+        }
+
+
+
     }
 
     public function getAll(){
@@ -50,6 +73,6 @@ class AddController extends Controller
 
     public function getById($id){
         $add = Advertisement::findOrFail($id);
-        return view('advertisement')->with('add',$add);
+       return view('advertisement')->with('add',$add);
     }
 }

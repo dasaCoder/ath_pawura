@@ -41,6 +41,15 @@
     {{$add->description}}
 
 
+<div>
+    images
+    @foreach($add->images as $image)
+        <img src="{{route('advertisement.image',$image->image_path)}}" alt="">
 
+
+
+    @endforeach
+
+</div>
 
 @endsection

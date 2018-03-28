@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
+
 Route::get('/profile','AddController@getUsersOnes');
 
 Route::get('/home', 'AddController@getAll')->name('home');
@@ -26,4 +27,11 @@ Route::get('/advertisment/add',function(){
     return view('create_add');
 });
 Route::get('advertisement/{id}','AddController@getById');
+
+Route::get('/addver_image/{image_path}',[
+    'uses' => 'ImageController@getImage',
+    'as' => 'advertisement.image'
+]);
+
+/*Route::get('/home', 'HomeController@index')->name('home');*/
 
