@@ -5,8 +5,17 @@
     <div class="container-fluid">
 
         <div class="panel-body">
+
             <form class="form-horizontal" method="POST" action="{{ route('advertisement') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
+
+                <div class="form-group">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h3>Tell us about what you invented.....</h3>
+                    </div>
+
+                </div>
+
 
                 <div class="form-group{{ $errors->has('title') ? ' has-error' : '' }}">
                     <label for="title" class="col-md-4 control-label">Title</label>
@@ -56,7 +65,7 @@
 
                     <div class="col-md-6">
 
-                        <textarea name="description" id="description" cols="60" rows="10">{{ old('description') }}</textarea>
+                        <textarea class="form-control" name="description" id="description" cols="60" rows="10">{{ old('description') }}</textarea>
 
                         {{--<input id="description" type="text" class="form-control" name="description" value="{{ old('description') }}" required autofocus>--}}
 
@@ -68,8 +77,9 @@
                     </div>
                 </div>
 
+
                 <div class="form-group{{ $errors->has('image1') ? ' has-error' : '' }}">
-                    <label for="image1" class="col-md-4 control-label">image1</label>
+                    <label for="image1" class="col-md-4 control-label">Image 1</label>
 
                     <div class="col-md-6">
 
@@ -86,7 +96,7 @@
                 </div>
 
                 <div class="form-group{{ $errors->has('image2') ? ' has-error' : '' }}">
-                    <label for="image2" class="col-md-4 control-label">image2</label>
+                    <label for="image2" class="col-md-4 control-label">Image 2</label>
 
                     <div class="col-md-6">
 
@@ -97,6 +107,40 @@
                         @if ($errors->has('image2'))
                             <span class="help-block">
                                         <strong>{{ $errors->first('image2') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('image1') ? ' has-error' : '' }}">
+                    <label for="image3" class="col-md-4 control-label">Image 3</label>
+
+                    <div class="col-md-6">
+
+                        <input name="image3" id="image3" type="file" value="{{ old('image3') }}" required>
+
+                        {{--<input id="description" type="text" class="form-control" name="description" value="{{ old('description') }}" required autofocus>--}}
+
+                        @if ($errors->has('image3'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('image3') }}</strong>
+                                    </span>
+                        @endif
+                    </div>
+                </div>
+
+                <div class="form-group{{ $errors->has('image4') ? ' has-error' : '' }}">
+                    <label for="image4" class="col-md-4 control-label">Image 4</label>
+
+                    <div class="col-md-6">
+
+                        <input name="image4" id="image4" type="file" value="{{ old('image4') }}" required>
+
+                        {{--<input id="description" type="text" class="form-control" name="description" value="{{ old('description') }}" required autofocus>--}}
+
+                        @if ($errors->has('image4'))
+                            <span class="help-block">
+                                        <strong>{{ $errors->first('image4') }}</strong>
                                     </span>
                         @endif
                     </div>

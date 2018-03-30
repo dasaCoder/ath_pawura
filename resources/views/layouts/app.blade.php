@@ -12,6 +12,13 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/animate.css')}}">
+    <link rel="stylesheet" href="{{asset('css/font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/prettyPhoto.css')}}">
+    <link rel="stylesheet" href="{{asset('css/price-range.css')}}">
+    <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
 </head>
 <body>
     <div id="app">

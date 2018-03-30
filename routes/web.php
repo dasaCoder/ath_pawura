@@ -18,15 +18,15 @@ Route::get('/', function () {
 Auth::routes();
 
 
-Route::get('/profile','AddController@getUsersOnes');
+Route::get('/profile','AddController@getUsersOnes')->name('profile');
 
 Route::get('/home', 'AddController@getAll')->name('home');
 
 Route::post('/advertisment/add', 'AddController@add')->name('advertisement');
 Route::get('/advertisment/add',function(){
     return view('create_add');
-});
-Route::get('advertisement/{id}','AddController@getById');
+})->name('create_add');
+Route::get('advertisement/{id}','AddController@getById')->name('advertisement.get');
 
 Route::get('/addver_image/{image_path}',[
     'uses' => 'ImageController@getImage',
