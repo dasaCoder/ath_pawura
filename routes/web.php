@@ -33,5 +33,16 @@ Route::get('/addver_image/{image_path}',[
     'as' => 'advertisement.image'
 ]);
 
+Route::get('/search',function (){
+    return view('search');
+})->name('search');
+
+Route::post('/search','addController@search');
+
+
+Route::get('/about',function(){
+    return view('about');
+})->name('about');
+
 /*Route::get('/home', 'HomeController@index')->name('home');*/
 

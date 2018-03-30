@@ -79,7 +79,7 @@
 
 
                 <div class="form-group{{ $errors->has('image1') ? ' has-error' : '' }}">
-                    <label for="image1" class="col-md-4 control-label">Image 1</label>
+                    <label for="image1" class="col-md-4 control-label">Image 1 (main image)</label>
 
                     <div class="col-md-6">
 
@@ -117,7 +117,7 @@
 
                     <div class="col-md-6">
 
-                        <input name="image3" id="image3" type="file" value="{{ old('image3') }}" required>
+                        <input name="image3" id="image3" type="file" value="{{ old('image3') }}" >
 
                         {{--<input id="description" type="text" class="form-control" name="description" value="{{ old('description') }}" required autofocus>--}}
 
@@ -134,7 +134,7 @@
 
                     <div class="col-md-6">
 
-                        <input name="image4" id="image4" type="file" value="{{ old('image4') }}" required>
+                        <input name="image4" id="image4" type="file" value="{{ old('image4') }}" >
 
                         {{--<input id="description" type="text" class="form-control" name="description" value="{{ old('description') }}" required autofocus>--}}
 

@@ -5,6 +5,10 @@
  */
 
 /*@import url(https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css);*/
+body{
+    background-color: ivory;
+}
+
 .col-container {
     display: table; /* Make the container element behave like a table */
     width: 100%; /* Set full-width to expand the whole page */

@@ -23,10 +23,14 @@
 <body>
     <div id="app">
 
+
         @include('partials.nav')
         @yield('nav')
 
         @yield('content')
+
+        @include('partials.footer')
+        @yield('footer')
 
     </div>
 

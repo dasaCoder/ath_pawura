@@ -76,7 +76,7 @@
     </div>
 </nav>--}}
 
-<header id="header"><!--header-->
+<header id="header" style="background-color: #f9f9f9"><!--header-->
 
 
 
@@ -85,7 +85,7 @@
             <div class="row">
                 <div class="col-sm-4">
                     <div class="logo pull-left">
-                        <a href="index.html"><img src="images/home/logo.png" alt="" /></a>
+                        <a href="{{route('home')}}"><img src="images/home/logo.png" alt="" /></a>
                     </div>
 
                 </div>
@@ -146,22 +146,26 @@
                     </div>
                     <div class="mainmenu pull-left">
                         <ul class="nav navbar-nav collapse navbar-collapse">
-                            <li><a href="index.html" class="active">Home</a></li>
+                            <li><a href="{{route('home')}}" class="active">Home</a></li>
 
-                            <li class="dropdown"><a href="#">Invents<i class="fa fa-angle-down"></i></a>
+                            {{--<li class="dropdown"><a href="#">Invents<i class="fa fa-angle-down"></i></a>
                                 <ul role="menu" class="sub-menu">
                                     <li><a href="blog.html">Blog List</a></li>
                                     <li><a href="blog-single.html">Blog Single</a></li>
                                 </ul>
-                            </li>
+                            </li>--}}
 
-                            <li><a href="contact-us.html">Contact</a></li>
+                            <li><a href="{{route('about')}}">About us</a></li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-sm-3">
                     <div class="search_box pull-right">
-                        <input type="text" placeholder="Search"/>
+                        <form action="{{route('search')}}" method="post">
+                            {{csrf_field()}}
+                            <input name="phase" type="text" placeholder="Search"/>
+                        </form>
+
                     </div>
                 </div>
             </div>

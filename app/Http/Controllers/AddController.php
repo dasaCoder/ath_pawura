@@ -7,6 +7,7 @@ use App\Image;
 use Dotenv\Validator;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Auth;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use phpDocumentor\Reflection\Types\Integer;
@@ -74,5 +75,11 @@ class AddController extends Controller
     public function getById($id){
         $add = Advertisement::findOrFail($id);
        return view('advertisement')->with('add',$add);
+    }
+
+    public function search(Request $request){
+        $phase = '%'.$request->phase.'%';
+        $adds = Advertisement::where('title','like',$phase)->get();
+        return view('search')->with('adds',$adds);
     }
 }
