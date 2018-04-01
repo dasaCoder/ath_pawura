@@ -18,6 +18,11 @@ body{
     display: table-cell; /* Make elements inside the container behave like table cells */
 }
 
+.gallery-img{
+    height: 70px;
+    width: 70px;
+    cursor: pointer;
+}
 .ath-btn{
     padding-top: 5px;
     margin: 6px;

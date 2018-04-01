@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="{{asset('css/prettyPhoto.css')}}">
     <link rel="stylesheet" href="{{asset('css/price-range.css')}}">
     <link rel="stylesheet" href="{{asset('css/responsive.css')}}">
+    <link rel="stylesheet" href="{{asset('css/gallery.css')}}">
 </head>
 <body>
     <div id="app">
@@ -36,5 +37,6 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{asset('js/gallery.js')}}"></script>
 </body>
 </html>
